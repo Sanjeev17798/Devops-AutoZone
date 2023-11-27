@@ -1,17 +1,16 @@
 # Devops-AutoZone
 
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample-app-deployment
+  name: AutoZone-app-deployment
   labels:
-    app: sample-app
+    app: Autozone-app
 spec:
-  replicas: 3  # ensures high availability
+  replicas: 3  # high availability
   selector:
     matchLabels:
-      app: sample-app
+      app: AutoZone-app
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -20,10 +19,10 @@ spec:
   template:
     metadata:
       labels:
-        app: sample-app
+        app: AutoZone-app
     spec:
       containers:
-      - name: sample-app
-        image: nginx  # using nginx as a placeholder for your app image
+      - name: AutoZone-app
+        image: nginx  # using nginx as a image 
         ports:
         - containerPort: 80
